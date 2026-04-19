@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #05080f;
+  --foreground: #f0f4f8;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  background-image: 
+    radial-gradient(circle at 15% 50%, rgba(79, 172, 254, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-charcoal/80 backdrop-blur-md border border-white/5 rounded-xl;
+  }
+  
+  .glass-panel-neon {
+    @apply glass-panel border-neon-green/20 shadow-[0_0_20px_rgba(0,255,136,0.05)];
+  }
+
+  .text-glow-green {
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  }
+  
+  .text-glow-red {
+    text-shadow: 0 0 10px rgba(255, 0, 60, 0.5);
+  }
+}

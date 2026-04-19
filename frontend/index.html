@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Market Analyst Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Unique IDs per best practices -->
+</head>
+<body>
+    <div class="overlay-mesh"></div>
+    <main class="container">
+        <header>
+            <div class="logo-box">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" class="pulse-icon">
+                    <path d="M3 3V21H21" stroke="#00f2fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M18 9L13 14L9 10L3 16" stroke="#4facfe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>AI <span>Market Analyst</span></h1>
+            </div>
+            <p class="subtitle">Real-time technical analysis powered by Google Gemini</p>
+        </header>
+
+        <section class="search-section">
+            <form id="analyze-form" class="search-form">
+                <div class="input-wrapper">
+                    <input type="text" id="symbol-input" placeholder="Enter symbol (e.g., BTCUSDT)" required autocomplete="off">
+                    <button type="submit" id="analyze-btn">
+                        <span>Analyze</span>
+                        <div class="spinner" id="btn-spinner" style="display: none;"></div>
+                    </button>
+                </div>
+            </form>
+            <div id="error-message" class="error-toast" style="display: none;"></div>
+        </section>
+
+        <section id="results-section" class="results-container" style="display: none;">
+            <div class="top-row">
+                <div class="glass-card recommendation-card">
+                    <h2>AI Recommendation</h2>
+                    <div id="ai-rec-badge" class="rec-badge neutral">Neutral</div>
+                </div>
+
+                <div class="glass-card summary-card">
+                    <h2>Market Intelligence Report</h2>
+                    <div id="ai-summary" class="markdown-body">
+                        <!-- AI content goes here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card table-card">
+                <h2>Technical Analysis Matrix</h2>
+                <div class="table-responsive">
+                    <table id="tf-table">
+                        <thead>
+                            <tr>
+                                <th>Timeframe</th>
+                                <th>Close Price</th>
+                                <th>EMA(9)</th>
+                                <th>EMA(21)</th>
+                                <th>Trend</th>
+                                <th>RSI(14)</th>
+                                <th>Momentum</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tf-table-body">
+                            <!-- Rows injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
