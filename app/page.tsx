@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import { createChart } from 'lightweight-charts';
+import { createChart, ColorType } from 'lightweight-charts';
 import { Search, Activity, Zap, TrendingUp, BarChart2 } from 'lucide-react';
 
 export default function Dashboard() {
@@ -34,7 +34,7 @@ export default function Dashboard() {
     if (data && chartContainerRef.current) {
       const chart = createChart(chartContainerRef.current, {
         layout: {
-          background: { type: 'solid', color: 'transparent' },
+          background: { type: ColorType.Solid, color: 'transparent' },
           textColor: '#94a3b8',
         },
         grid: {
